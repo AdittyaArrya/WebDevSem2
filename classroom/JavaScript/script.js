@@ -19,11 +19,44 @@
 //     console.log("Button Pressed");
 // }
 
-const form = document.querySelector("form");
-form.addEventListener("submit", formSubmit);
-function formSubmit(event) {
-    event.preventDefault();
-    console.log(event.srcElement[0].value);
-    console.log(event.srcElement[1].value);
-    console.log("Form Submitted");
+// const form = document.querySelector("form");
+// form.addEventListener("submit", formSubmit);
+// function formSubmit(event) {
+//     event.preventDefault();
+//     console.log(event.srcElement[0].value);
+//     console.log(event.srcElement[1].value);
+//     console.log("Form Submitted");
+// }
+
+// debugger
+// console.log(a)
+// var a =100
+// let b =200
+// console.log(a)
+// console.log(b)
+
+// function print(){
+//     let c =300
+//     console.log("Inside Function")
+//     console.log(c)
+// }
+// print()
+
+// function firstFunction(){
+//     SecondFunction()
+// }
+// function SecondFunction(){
+//     ThirdFunction()
+// }
+// function ThirdFunction(){
+//     console.log("Inside Third Function")
+// }
+// firstFunction()
+
+let total = 100;
+function calculateTotal() {
+    console.log("Total inside function:", total);
+    var total = 200;
+    console.log("Total after declaration inside function:", total);
 }
+calculateTotal();
