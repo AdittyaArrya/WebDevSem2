@@ -53,10 +53,42 @@
 // }
 // firstFunction()
 
-let total = 100;
-function calculateTotal() {
-    console.log("Total inside function:", total);
-    var total = 200;
-    console.log("Total after declaration inside function:", total);
-}
-calculateTotal();
+// let total = 100;
+// function calculateTotal() {
+//     console.log("Total inside function:", total);
+//     var total = 200;
+//     console.log("Total after declaration inside function:", total);
+// }
+// calculateTotal();
+
+
+// setTimeout(() => {
+//     console.log("this is inside setTimeout")
+// }, 2000);
+
+// setInterval(() => {
+//     console.log("this is inside setInterval")
+// }, 2000);
+
+
+// const timeout= setTimeout(() => {
+//     console.log("After 2 seconds")
+// }, 2000);
+// clearTimeout(timeout)
+
+// const interval= setInterval(() => {
+//     console.log("printing at every 2 seconds")
+// }, 2000);
+
+// setTimeout(() => {
+//     clearInterval(interval)
+// }, 10000);
+
+let count = 0;
+const interval = setInterval(() => {
+    count++;
+    console.log(`Count: ${count}`);
+    if (count === 5) {
+        clearInterval(interval);
+    }
+}, 1000);
