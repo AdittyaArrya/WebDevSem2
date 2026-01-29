@@ -93,22 +93,36 @@
 //     }
 // }, 1000);
 
-const addTaskButton = document.getElementById("add-task-button");
-const taskInput = document.getElementById("task-input");
-const taskList = document.getElementById("task-list");
+// const addTaskButton = document.getElementById("add-task-button");
+// const taskInput = document.getElementById("task-input");
+// const taskList = document.getElementById("task-list");
 
-addTaskButton.addEventListener("click", () => {
-    const taskText = document.createElement("li");
-    const delBtn = document.createElement("button");
+// addTaskButton.addEventListener("click", () => {
+//     const taskText = document.createElement("li");
+//     const delBtn = document.createElement("button");
 
-    taskText.innerText = taskInput.value;
+//     taskText.innerText = taskInput.value;
     
-    delBtn.innerText = "Delete";
-    delBtn.addEventListener("click", () => {
-        taskList.removeChild(taskText);
-    });
+//     delBtn.innerText = "Delete";
+//     delBtn.addEventListener("click", () => {
+//         taskList.removeChild(taskText);
+//     });
     
-    taskList.appendChild(taskText);
-    taskText.appendChild(delBtn);
-    taskInput.value = "";
-});
+//     taskList.appendChild(taskText);
+//     taskText.appendChild(delBtn);
+//     taskInput.value = "";
+// });
+
+// callback
+function print(){
+    console.log('Inside Print Function')
+}
+
+function greet(callback){
+    setTimeout(() => {
+        console.log('Hello User')
+        callback()
+    }, 2000);
+}
+
+greet(print)
