@@ -84,11 +84,31 @@
 //     clearInterval(interval)
 // }, 10000);
 
-let count = 0;
-const interval = setInterval(() => {
-    count++;
-    console.log(`Count: ${count}`);
-    if (count === 5) {
-        clearInterval(interval);
-    }
-}, 1000);
+// let count = 0;
+// const interval = setInterval(() => {
+//     count++;
+//     console.log(`Count: ${count}`);
+//     if (count === 5) {
+//         clearInterval(interval);
+//     }
+// }, 1000);
+
+const addTaskButton = document.getElementById("add-task-button");
+const taskInput = document.getElementById("task-input");
+const taskList = document.getElementById("task-list");
+
+addTaskButton.addEventListener("click", () => {
+    const taskText = document.createElement("li");
+    const delBtn = document.createElement("button");
+
+    taskText.innerText = taskInput.value;
+    
+    delBtn.innerText = "Delete";
+    delBtn.addEventListener("click", () => {
+        taskList.removeChild(taskText);
+    });
+    
+    taskList.appendChild(taskText);
+    taskText.appendChild(delBtn);
+    taskInput.value = "";
+});
