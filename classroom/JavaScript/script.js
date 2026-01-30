@@ -113,16 +113,82 @@
 //     taskInput.value = "";
 // });
 
-// callback
-function print(){
-    console.log('Inside Print Function')
-}
+// // callback
+// function print(){
+//     console.log('Inside Print Function')
+// }
 
-function greet(callback){
+// function greet(callback){
+//     setTimeout(() => {
+//         console.log('Hello User')
+//         callback()
+//     }, 2000);
+// }
+
+// greet(print)
+
+// callback hell
+// console.log("starting homework....")
+
+// setTimeout(() => {
+//     console.log("homework done")
+//     console.log("starting dinner....")
+    
+//     setTimeout(() => {
+//         console.log("dinner done")
+//         console.log("getting ready to go out....");
+    
+//         setTimeout(() => {
+//             console.log("going to the playGround!")
+//         }, 1000);
+//     }, 1500);
+// }, 2000);
+
+// Handling callback hell using named functions
+// function finishHomework(callback) {
+//     console.log("Starting homework...");
+//     setTimeout(() => {
+//         console.log("Homework done.");
+//         callback();
+//     }, 2000);
+// }
+// function eatDinner(callback) {
+//     console.log("Starting dinner...");
+//     setTimeout(() => {
+//         console.log("Dinner done.");
+//         callback();
+//     }, 1500);
+// }
+// function goToPlayground() {
+//     console.log("Going to the playground!");
+// }
+
+// finishHomework(eatDinner.bind(null, goToPlayground));
+
+// finishHomework(() => {
+//     eatDinner(() => {
+//         goToPlayground();
+//     });
+// });
+
+// finishHomework(eatDinner(goToPlayground()));
+
+// Promises
+const p=new Promise((resolve,reject)=>{
+    console.log("Going to do homework")
+
     setTimeout(() => {
-        console.log('Hello User')
-        callback()
+        const done=false
+        if(done){
+            resolve("Homework is done")
+        }else{
+            reject("Homework is not done")
+        }
     }, 2000);
-}
+})
 
-greet(print)
+p.then((msg)=>{
+    console.log(msg)
+}).catch((err)=>{
+    console.log(err)
+})
