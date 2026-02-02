@@ -192,3 +192,5 @@ p.then((msg)=>{
 }).catch((err)=>{
     console.log(err)
 })
+
+console.log("After Promise")
