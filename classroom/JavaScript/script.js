@@ -174,23 +174,79 @@
 // finishHomework(eatDinner(goToPlayground()));
 
 // Promises
-const p=new Promise((resolve,reject)=>{
-    console.log("Going to do homework")
+// const p=new Promise((resolve,reject)=>{
+//     console.log("Going to do homework")
 
-    setTimeout(() => {
-        const done=false
-        if(done){
-            resolve("Homework is done")
-        }else{
-            reject("Homework is not done")
-        }
-    }, 2000);
-})
+//     setTimeout(() => {
+//         const done=false
+//         if(done){
+//             resolve("Homework is done")
+//         }else{
+//             reject("Homework is not done")
+//         }
+//     }, 2000);
+// })
 
-p.then((msg)=>{
-    console.log(msg)
-}).catch((err)=>{
-    console.log(err)
-})
+// p.then((msg)=>{
+//     console.log(msg)
+// }).catch((err)=>{
+//     console.log(err)
+// })
 
-console.log("After Promise")
+// lecture 14
+// console.log("After Promise")
+// console.log("Starting homework...");
+// setTimeout(() => {
+//     console.log("Homework done.");
+// },1);
+// console.log("After starting homework...");
+// p = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         const done = false;
+//         if (done) {
+//             resolve("Homework is done");
+//         } else {
+//             reject("Homework is not done");
+//         }
+//     }, 2000);
+// });
+
+// p.then((msg) => {
+//     console.log(msg);
+// }).catch((err) => {
+//     console.log(err);
+// });
+
+// lecture 15
+function orderFood(){
+    console.log("Ordering Food")
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            resolve("Food Ordered")
+        }, 2000);
+    })
+}
+function prepareFood(){
+    console.log("Preparing Food")
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            resolve("Food Prepared")
+        }, 3000);
+    })
+}
+function deliverFood(){
+    console.log("Delivering Food")
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            resolve("Food Delivered")
+        }, 4000);
+    })
+}
+
+async function foodOrder() {
+    await orderFood()
+    await prepareFood()
+    await deliverFood()
+    console.log("Food Order Completed")
+}
+foodOrder()
