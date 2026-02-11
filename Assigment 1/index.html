@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Event Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>🎯 Smart Event Dashboard</h1>
+
+    <div class="container">
+        <div class="card cardNewEvent">
+            <h2>Add New Event</h2>
+            <form id="eventForm">
+                <label>Event Title:</label>
+                <input type="text" id="eventName" required placeholder="Enter title...">
+
+                <label>Event Date:</label>
+                <input type="date" id="eventDate" required>
+
+                <label>Category:</label>
+                <select id="eventCategory">
+                    <label for="eventCategory">Category:</label>
+                    <option value="">Select Category</option>
+                    <option value="Workshop">Workshop</option>
+                    <option value="Meetup">Meetup</option>
+                    <option value="Webinar">Webinar</option>
+                    <option value="Social">Social</option>
+                </select>
+
+                <label>Description:</label>
+                <textarea id="eventDescription" placeholder="lorem ipsum"></textarea>
+
+                <button type="submit" id="addEventBtn">Add Event</button>
+            </form>
+        </div>    
+
+        <div class="card cardMyEvents">
+            <h2>My Events</h2>
+            <div class="button-group">
+                <button id="clearEvents" class="gradient-btn">Clear All Events</button>
+                <button id="addSampleEvents" class="gradient-btn">Add Sample Events</button>
+            </div>
+            <ul id="eventsList"></ul>
+        </div>
+    </div>
+
+    <div class="card domDemoCard">
+        <h2>DOM Manipulation Demo</h2>
+        <div class="demo-inner-box">
+            <h3>innerText vs innerHTML vs textContent</h3>
+            <hr>
+            <div id="propertyComparison">
+                <p id="demo-html"></p>
+                <p id="demo-text"></p>
+                <p id="demo-content"></p>
+            </div>
+            <p class="key-press-log">You pressed: <span id="keyPressed">None</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

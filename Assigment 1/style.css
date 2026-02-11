@@ -1,0 +1,93 @@
+/* General Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    background-color: #a5c7f9; /* Matching your background */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 { color: white; margin-bottom: 30px; text-shadow: 1px 1px 4px rgba(0,0,0,0.1); }
+
+/* Layout Container */
+.container {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 30px;
+}
+
+/* Card Styling */
+.card {
+    background: #f8fbff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.cardNewEvent { width: 380px; flex-shrink: 0; }
+.cardMyEvents { flex-grow: 1; }
+
+h2 { color: #5b5bd6; margin-bottom: 20px; }
+
+/* Form Elements */
+label { display: block; font-weight: bold; margin-top: 15px; font-size: 0.9rem; }
+input, select, textarea {
+    width: 100%; padding: 12px; margin-top: 5px;
+    border: 1px solid #d1d9e6; border-radius: 10px;
+}
+
+/* Purple Gradient Buttons */
+button {
+    background: linear-gradient(90deg, #6a5af9, #a356f3);
+    color: white; border: none; padding: 12px;
+    border-radius: 10px; cursor: pointer; font-weight: bold;
+    transition: transform 0.1s;
+}
+
+button:active { transform: scale(0.97); }
+
+.button-group { display: flex; gap: 15px; margin-bottom: 20px; }
+.button-group button { flex: 1; }
+#addEventBtn { width: 100%; margin-top: 20px; }
+
+/* Grid for Side-by-Side Event Cards */
+#eventsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    list-style: none;
+}
+
+.event-item {
+    background: #d9e6ff; /* Soft light blue */
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.category-tag {
+    background: #5b5bd6; color: white; font-size: 0.75rem;
+    padding: 4px 10px; border-radius: 20px; display: inline-block; margin: 8px 0;
+}
+
+.delete-btn {
+    position: absolute; top: 12px; right: 12px;
+    background: #ff7675; color: white; border: none;
+    width: 24px; height: 24px; border-radius: 50%; cursor: pointer;
+}
+
+/* Bottom Demo Section */
+.domDemoCard { width: 100%; max-width: 1200px; }
+.demo-inner-box { background: white; border: 1px solid #eee; padding: 25px; border-radius: 15px; }
+.key-press-log { margin-top: 15px; font-weight: bold; color: #5b5bd6; }
+hr { border: 0.5px solid #eee; margin: 15px 0; }
