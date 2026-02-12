@@ -25,14 +25,14 @@
 //     console.log(event.key)
 // })
 
-// --- 1. SETUP: Grab elements from HTML ---
+// --- 1. Grab elements from HTML ---
 const eventForm = document.getElementById('eventForm');
 const eventsList = document.getElementById('eventsList');
 const clearBtn = document.getElementById('clearEvents');
 const sampleBtn = document.getElementById('addSampleEvents');
 const keyDisplay = document.getElementById('keyPressed');
 
-// --- 2. CORE LOGIC: Function to create an Event Card ---
+// --- 2. Function to create an Event Card ---
 function addEventToDashboard(title, date, category, desc) {
     // Create a new <li> element
     const li = document.createElement('li');
@@ -40,7 +40,7 @@ function addEventToDashboard(title, date, category, desc) {
     
     // Fill it with HTML content
     li.innerHTML = `
-        <button class="delete-btn" title="Delete Event">×</button>
+        <button class="delete-btn" title="Delete Event"></button>
         <h3>${title}</h3>
         <p style="font-size: 0.85rem; color: #666;">📅 ${date}</p>
         <span class="category-tag">${category}</span>
@@ -56,7 +56,7 @@ function addEventToDashboard(title, date, category, desc) {
     eventsList.appendChild(li);
 }
 
-// --- 3. ACTIONS: Handle Button Clicks ---
+// --- 3. Handle Button Clicks ---
 
 // Handle "Add Event" Form
 eventForm.addEventListener('submit', (e) => {
@@ -74,22 +74,21 @@ eventForm.addEventListener('submit', (e) => {
 
 // Handle "Clear All"
 clearBtn.addEventListener('click', () => {
-    eventsList.innerHTML = ''; // Wipes everything inside the <ul>
+    eventsList.innerHTML = '';
 });
 
 // Handle "Add Sample Events"
 sampleBtn.addEventListener('click', () => {
-    addEventToDashboard('Emifest', '2026-01-14', 'Social', 'lorem ipsum');
+    addEventToDashboard('Web Dev', '2026-01-14', 'Social', 'lorem');
     addEventToDashboard('Tech Workshop', '2026-03-22', 'Workshop', 'Learning JavaScript DOM manipulation.');
 });
 
-// --- 4. DEMO: Real-Time Keyboard Tracker ---
+// --- 4. Real-Time Keyboard Tracker ---
 window.addEventListener('keydown', (e) => {
-    // Update the textContent to show which key was pressed
     keyDisplay.textContent = e.key === " " ? "Space" : e.key;
 });
 
-// --- 5. DEMO: Property Comparison ---
+// --- 5. DOM Manipulation Demo ---
 const originalText = "<strong>Bold Text</strong>    with spaces";
 
 // innerHTML renders the bold tag
