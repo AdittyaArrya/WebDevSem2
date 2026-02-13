@@ -1,30 +1,3 @@
-// const form = document.querySelector('#eventForm');
-// const list = document.querySelector('#eventList');
-
-// form.addEventListener('submit', (event)=>{
-//     event.preventDefault();
-//     const title=eventTitle.value
-//     const date=eventDate.value
-//     const category=eventcategory.value
-//     const description=eventDescription.value
-//     console.log(title, date, category, description)
-//     const card=document.createElement("div")
-//     card.innerHTML=`
-//     <div>
-//         <h2>${title}</h2>
-//         <p>${date}</p>
-//         <button>${category}</button>
-//         <p>${description}</p>
-//     </div>
-//     `
-
-//     eventcard.appendChild(card)
-// });
-
-// document.addEventListener('keydown', (event)=>{
-//     console.log(event.key)
-// })
-
 // --- 1. Fetch elements from HTML ---
 const eventForm = document.getElementById('eventForm');
 const eventsList = document.getElementById('eventsList');
