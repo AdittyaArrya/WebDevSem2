@@ -218,35 +218,35 @@
 // });
 
 // lecture 15
-function orderFood(){
-    console.log("Ordering Food")
-    return new Promise((resolve,reject)=>{
-        setTimeout(() => {
-            resolve("Food Ordered")
-        }, 2000);
-    })
-}
-function prepareFood(){
-    console.log("Preparing Food")
-    return new Promise((resolve,reject)=>{
-        setTimeout(() => {
-            resolve("Food Prepared")
-        }, 3000);
-    })
-}
-function deliverFood(){
-    console.log("Delivering Food")
-    return new Promise((resolve,reject)=>{
-        setTimeout(() => {
-            resolve("Food Delivered")
-        }, 4000);
-    })
-}
+// function orderFood(){
+//     console.log("Ordering Food")
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             resolve("Food Ordered")
+//         }, 2000);
+//     })
+// }
+// function prepareFood(){
+//     console.log("Preparing Food")
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             resolve("Food Prepared")
+//         }, 3000);
+//     })
+// }
+// function deliverFood(){
+//     console.log("Delivering Food")
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             resolve("Food Delivered")
+//         }, 4000);
+//     })
+// }
 
-async function foodOrder() {
-    await orderFood()
-    await prepareFood()
-    await deliverFood()
-    console.log("Food Order Completed")
-}
-foodOrder()
+// async function foodOrder() {
+//     await orderFood()
+//     await prepareFood()
+//     await deliverFood()
+//     console.log("Food Order Completed")
+// }
+// foodOrder()
