@@ -25,7 +25,7 @@
 //     console.log(event.key)
 // })
 
-// --- 1. Grab elements from HTML ---
+// --- 1. Fetch elements from HTML ---
 const eventForm = document.getElementById('eventForm');
 const eventsList = document.getElementById('eventsList');
 const clearBtn = document.getElementById('clearEvents');
@@ -34,11 +34,9 @@ const keyDisplay = document.getElementById('keyPressed');
 
 // --- 2. Function to create an Event Card ---
 function addEventToDashboard(title, date, category, desc) {
-    // Create a new <li> element
     const li = document.createElement('li');
     li.className = 'event-item';
     
-    // Fill it with HTML content
     li.innerHTML = `
         <button class="delete-btn" title="Delete Event"></button>
         <h3>${title}</h3>
@@ -47,20 +45,18 @@ function addEventToDashboard(title, date, category, desc) {
         <p style="margin-top: 10px; font-size: 0.95rem;">${desc || "No description provided."}</p>
     `;
 
-    // Add Delete Functionality to the "X" button
     li.querySelector('.delete-btn').addEventListener('click', () => {
-        li.remove(); // Removes the card from the DOM tree
+        li.remove();
     });
 
-    // Append (add) the new card to our list
     eventsList.appendChild(li);
 }
 
-// --- 3. Handle Button Clicks ---
+// --- 3. Button ---
 
-// Handle "Add Event" Form
+// "Add Event" Form
 eventForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Stop page from refreshing
+    e.preventDefault();
     
     addEventToDashboard(
         document.getElementById('eventName').value,
