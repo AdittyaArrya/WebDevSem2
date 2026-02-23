@@ -250,3 +250,69 @@
 //     console.log("Food Order Completed")
 // }
 // foodOrder()
+
+// async function getdata(){
+//     try{
+//         const response = await fetch("https://jsonplaceholder.typicode.com/post",{
+//             method: "POST", 
+//             headers:{
+//                 "Content-Type":"application/json"
+//             },
+//             body:JSON.stringify({
+//                 title:"foo",
+//                 body:"bar",
+//                 userId:1
+//             })
+//         })
+//         if(!response.ok){
+//             throw new Error("Somthing went wrong")
+//         }
+//     const data=await response.json()
+//     console.log(data)
+//     }
+//     catch(e){
+
+//     }
+// }
+
+// let obj={
+//     name:"yash",
+//     age:24
+// }
+
+// localStorage.setItem("obj",JSON.stringify(obj))
+
+// localStorage.setItem("name","yash")
+// localStorage.setItem("age",24)
+
+// console.log(localStorage.getItem("name"))
+// console.log(localStorage.getItem("age"))
+
+// console.log(JSON.parse(localStorage.getItem("obj")))
+
+// localStorage.removeItem("age")
+
+// sessionStorage.setItem("name", "Yash")
+// sessionStorage.setItem("age", 24)
+
+// console.log(sessionStorage.getItem("name"))
+// console.log(sessionStorage.getItem("age"))
+
+// sessionStorage.removeItem("age")
+
+
+// sessionStorage.setItem("name","yash")
+// sessionStorage.setItem("age",24)
+
+// console.log(sessionStorage.getItem("name"))
+// console.log(sessionStorage.getItem("age"))
+
+// sessionStorage.removeItem("age")
+
+document.cookie="name=yash; expire=Fri , 20 Feb 2026 23:59:59 UTC;"
+document.cookie="age=45; expire=Fri , 20 Feb 2026 23:59:59 UTC;"
+
+async function sample(){
+    await fetch("http://127.0.0.1:5500/classroom/index.html")
+}
+sample()  
