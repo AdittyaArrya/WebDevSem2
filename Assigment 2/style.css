@@ -1,0 +1,104 @@
+:root {
+    --bg-color: #0a0e31;
+    --card-bg: #f8f9fa;
+    --accent-orange: #e67e22;
+    --text-dark: #333;
+    --console-bg: #050a24;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+/* Layout Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns on top */
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--card-bg);
+    color: var(--text-dark);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Make console span full width */
+.console-card {
+    grid-column: 1 / span 2;
+    background: var(--card-bg);
+}
+
+/* Search Section */
+#weather_Form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background: var(--accent-orange);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.history-tag {
+    background: var(--accent-orange);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-right: 8px;
+    font-size: 0.8rem;
+}
+
+/* Weather Info Table-like Look */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    border-left: 3px solid var(--accent-orange);
+    padding-left: 15px;
+}
+
+.val {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Console Styling */
+.event_state {
+    background: var(--console-bg);
+    color: #4cd137; /* Terminal green */
+    padding: 15px;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    min-height: 120px;
+}
+
+.event_state p { margin: 5px 0; }
+.async { color: #fbc531; }
+.micro { color: #00a8ff; }
