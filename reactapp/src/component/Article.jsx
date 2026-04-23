@@ -20,16 +20,24 @@ function Article(props) {
 
   useEffect(()=>{
     // const fetchData=async()=>{
-    //   const response=await fetch("https://jsonplaceholder.typicode.com/posts",{
-    //     method:"GET"
-    //   })
-    //   const data=await response.json()
-    //   console.log(data)
+      // try{
+      //   const response=await fetch("https://jsonplaceholder.typicode.com/posts/500",{
+      //     method:"GET"
+      //   })
+      //   const data=await response.json()
+      //   console.log(data)
+      // }catch(e){
+      //   console.log(e)
+      // }
     // }
 
     const fetchData=async()=>{
-      const response=await axios.get("https://jsonplaceholder.typicode.com/posts")
+      try{
+        const response=await axios.get("https://jsonplaceholder.typicode.com/posts/500")
       console.log(response.data)
+      }catch(e){
+        console.log(e)
+      }
     }
 
     fetchData()
