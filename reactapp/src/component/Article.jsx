@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import style from "../css/Article.module.css"
 import style1 from "../css/HomePage.module.css"
 // import styled from "styled-components"
@@ -9,6 +9,9 @@ import axios from "axios"
 function Article(props) {
   const [count, setCount]=useState(0)
   const [name, setName]=useState("Alex")
+  const [loading, setLoading]=useState(false)
+
+  const inputRef=useRef(null)
 
   useEffect(()=>{
     console.log("Component Mounted")
@@ -33,8 +36,10 @@ function Article(props) {
 
     const fetchData=async()=>{
       try{
-        const response=await axios.get("https://jsonplaceholder.typicode.com/posts/500")
-      console.log(response.data)
+        setLoading(true)
+        const response=await axios.get("https://jsonplaceholder.typicode.com/posts")
+        console.log(response.data)
+        setLoading(false)
       }catch(e){
         console.log(e)
       }
@@ -52,6 +57,15 @@ function Article(props) {
        <h3>{props.title}</h3> 
        <h2>{name}</h2>
        <button onClick={()=>{setName("John")}}>Change Name</button>
+       {loading?<h2>Loading...</h2>:""}
+
+       <div>
+        <input type='text' placeholder='Enter your Text' ref={inputRef}/>
+        <button onClick={()=>{
+          console.log(inputRef.current.value)
+          inputRef.current.focus()
+        }}>Submit</button>
+       </div>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
       <h2>{count}</h2>
       <button className={style.btn} onClick={handleIncrement}>Increment</button>
