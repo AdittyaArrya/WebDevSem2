@@ -1,0 +1,57 @@
+:root {
+  --bg-color: #05080a;
+  --panel-bg: #0f171e;
+  --neon-cyan: #64ffda;
+  --neon-green: #4ade80;
+  --neon-red: #f87171;
+  --score-yellow: #fbbf24;
+  --border-color: #1e293b;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: #e2e8f0;
+  font-family: 'Inter', 'Courier New', monospace;
+  margin: 0;
+  /* Subtle grid background */
+  background-image: linear-gradient(rgba(15, 23, 30, 0.8) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(15, 23, 30, 0.8) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.terminal-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 20px;
+}
+
+/* Header & Form */
+.app-header { margin-bottom: 2rem; border-left: 3px solid var(--neon-cyan); padding-left: 15px; }
+.app-header h1 { font-size: 2.5rem; margin: 0; color: var(--neon-cyan); text-transform: uppercase; letter-spacing: 2px; }
+
+.register-box { background: var(--panel-bg); border: 1px solid var(--border-color); padding: 15px; margin-bottom: 2rem; }
+.form-title { font-size: 0.8rem; color: #94a3b8; display: flex; justify-content: space-between; margin-bottom: 15px; }
+.input-row { display: flex; gap: 10px; }
+.input-row input { background: transparent; border: 1px solid var(--border-color); color: white; padding: 10px; flex: 1; }
+.add-btn { background: transparent; border: 1px solid var(--neon-cyan); color: var(--neon-cyan); padding: 0 20px; cursor: pointer; }
+
+/* Stats Grid */
+.stats-grid { display: flex; gap: 15px; margin-bottom: 2rem; }
+.stat-card { background: var(--panel-bg); border: 1px solid var(--border-color); padding: 20px; flex: 1; }
+.stat-card h3 { font-size: 0.7rem; color: #64748b; margin: 0; text-transform: uppercase; }
+.stat-card p { font-size: 2rem; margin: 10px 0 0 0; color: var(--neon-cyan); font-weight: bold; }
+
+/* Table */
+table { width: 100%; border-collapse: collapse; background: var(--panel-bg); border: 1px solid var(--border-color); }
+th { text-align: left; padding: 15px; color: #64748b; font-size: 0.8rem; border-bottom: 1px solid var(--border-color); }
+td { padding: 15px; border-bottom: 1px solid var(--border-color); }
+
+.status-badge { border-radius: 4px; padding: 5px 10px; font-size: 0.7rem; font-weight: bold; border: 1px solid; }
+.status-pass { color: var(--neon-green); border-color: rgba(74, 222, 128, 0.3); background: rgba(74, 222, 128, 0.05); }
+.status-fail { color: var(--neon-red); border-color: rgba(248, 113, 113, 0.3); background: rgba(248, 113, 113, 0.05); }
+
+.score-display { color: var(--score-yellow); font-weight: bold; font-size: 1.2rem; }
+.update-box { background: #000; border: 1px solid var(--border-color); color: white; padding: 5px; width: 60px; text-align: center; }
+
+.pass-border { border-left: 4px solid var(--neon-green); }
+.fail-border { border-left: 4px solid var(--neon-red); }
